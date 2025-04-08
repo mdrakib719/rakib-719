@@ -24,7 +24,9 @@ const education = [
     location: "Dhaka, Bangladesh",
     duration: "February 2021 - Present",
     description: "Specialized in MERN and Blockchain with a CGPA of 3.2/4.0.",
-    achievements: ["Dean's List", "Completed Blockchain Lab Projects"],
+    achievements: [
+      "Completed multiple projects in web development and blockchain",
+    ],
   },
   {
     id: 2,

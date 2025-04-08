@@ -12,39 +12,58 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <PageLayout>
+      {/* Hero Section */}
       <section className="bg-gradient-to-b from-background to-secondary/20 py-16 md:py-24">
         <div className="page-container">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-              Hi, I'm <span className="text-primary">Md Rakib Hossain</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              A passionate developer, researcher, and lifelong learner sharing
-              my journey and reflections through this portfolio.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg">
-                <Link to="/projects">
-                  View My Work
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/contact">Get in Touch</Link>
-              </Button>
+          <div className="flex flex-col-reverse md:flex-row items-center gap-10">
+            {/* Text */}
+            <div className="max-w-2xl text-center md:text-left">
+              <h1 className="text-8xl md:text-5xl font-bold mb-9 tracking-tight leading-tight">
+                <span className="text-primary">
+                  <span className="typing-text text-blue-500">
+                    {" "}
+                    Hi, I'm MD RAKIB HOSSAIN
+                  </span>
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+                MERN Stack Developer | Passionate about building web
+                applications
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                <Button asChild size="lg">
+                  <Link to="/projects" aria-label="View My Work">
+                    View My Work
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/contact" aria-label="Get in Touch">
+                    Get in Touch
+                  </Link>
+                </Button>
+              </div>
             </div>
+
+            {/* Profile Image */}
+            <img
+              src="src/pages/img/rakib.png"
+              alt="Md Rakib Hossain"
+              className="w-60 h-80 md:w-80 md:h-60 rounded-full object-cover shadow-lg"
+            />
           </div>
         </div>
       </section>
 
+      {/* Portfolio Grid */}
       <section className="py-16">
         <div className="page-container">
           <h2 className="section-title text-center text-3xl mb-12">
             Explore My Portfolio
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Link to="/projects" className="group">
+            {/* Projects */}
+            <Link to="/projects" className="group" aria-label="Projects">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Code className="text-primary" />
@@ -56,7 +75,8 @@ const Home = () => {
               </div>
             </Link>
 
-            <Link to="/blog" className="group">
+            {/* Blog */}
+            <Link to="/blog" className="group" aria-label="Blog">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FileText className="text-primary" />
@@ -68,7 +88,8 @@ const Home = () => {
               </div>
             </Link>
 
-            <Link to="/experience" className="group">
+            {/* Experience */}
+            <Link to="/experience" className="group" aria-label="Experience">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Briefcase className="text-primary" />
@@ -80,7 +101,8 @@ const Home = () => {
               </div>
             </Link>
 
-            <Link to="/academic" className="group">
+            {/* Academic */}
+            <Link to="/academic" className="group" aria-label="Academic">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                   <GraduationCap className="text-primary" />
@@ -95,6 +117,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Section */}
       <section className="bg-secondary py-16">
         <div className="page-container">
           <h2 className="section-title text-center text-3xl mb-8">About Me</h2>
@@ -110,7 +133,9 @@ const Home = () => {
               along the way.
             </p>
             <Button asChild variant="outline">
-              <Link to="/contact">Contact Me</Link>
+              <Link to="/contact" aria-label="Contact Me">
+                Contact Me
+              </Link>
             </Button>
           </div>
         </div>
