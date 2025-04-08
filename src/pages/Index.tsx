@@ -1,7 +1,12 @@
-
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, FileText, Briefcase, GraduationCap } from "lucide-react";
+import {
+  ArrowRight,
+  Code,
+  FileText,
+  Briefcase,
+  GraduationCap,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -11,11 +16,11 @@ const Home = () => {
         <div className="page-container">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-              Hi, I'm <span className="text-primary">Your Name</span>
+              Hi, I'm <span className="text-primary">Md Rakib Hossain</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              A passionate developer, researcher, and lifelong learner
-              sharing my journey and reflections through this portfolio.
+              A passionate developer, researcher, and lifelong learner sharing
+              my journey and reflections through this portfolio.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg">
@@ -34,8 +39,10 @@ const Home = () => {
 
       <section className="py-16">
         <div className="page-container">
-          <h2 className="section-title text-center text-3xl mb-12">Explore My Portfolio</h2>
-          
+          <h2 className="section-title text-center text-3xl mb-12">
+            Explore My Portfolio
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Link to="/projects" className="group">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
@@ -48,7 +55,7 @@ const Home = () => {
                 </p>
               </div>
             </Link>
-            
+
             <Link to="/blog" className="group">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -60,7 +67,7 @@ const Home = () => {
                 </p>
               </div>
             </Link>
-            
+
             <Link to="/experience" className="group">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -72,7 +79,7 @@ const Home = () => {
                 </p>
               </div>
             </Link>
-            
+
             <Link to="/academic" className="group">
               <div className="bg-card hover:bg-accent hover:text-accent-foreground transition-colors rounded-lg p-6 text-center shadow-sm border">
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -87,18 +94,20 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="bg-secondary py-16">
         <div className="page-container">
           <h2 className="section-title text-center text-3xl mb-8">About Me</h2>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg mb-6">
-              I'm a passionate individual dedicated to growth and learning. With a background in technology and design, 
-              I strive to create meaningful experiences and solve complex problems through my work.
+              I'm a passionate individual dedicated to growth and learning. With
+              a background in technology and design, I strive to create
+              meaningful experiences and solve complex problems through my work.
             </p>
             <p className="text-lg mb-6">
-              This portfolio serves as a reflection of my journey, showcasing not just what I've accomplished, 
-              but also the lessons I've learned along the way.
+              This portfolio serves as a reflection of my journey, showcasing
+              not just what I've accomplished, but also the lessons I've learned
+              along the way.
             </p>
             <Button asChild variant="outline">
               <Link to="/contact">Contact Me</Link>
