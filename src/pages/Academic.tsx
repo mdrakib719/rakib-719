@@ -1,72 +1,86 @@
-
 import { PageLayout } from "@/components/PageLayout";
 import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 // Sample academic data
 const education = [
   {
     id: 1,
-    degree: "Master of Science in Computer Science",
-    institution: "University Name",
-    location: "City, Country",
-    duration: "2022 - 2024",
-    description: "Specialized in Artificial Intelligence and Machine Learning with a GPA of 3.9/4.0.",
-    achievements: ["Dean's List", "Graduate Research Assistant"],
+    degree: "Bachelor of Science in Computer Science and Engineering",
+    institution: "BRAC University",
+    location: "Dhaka, Bangladesh",
+    duration: "February 2021 - Present",
+    description: "Specialized in MERN and Blockchain with a GPA of 3.2/4.0.",
+    achievements: ["Dean's List", "Completed Blockchain Lab Projects"],
   },
   {
     id: 2,
-    degree: "Bachelor of Science in Software Engineering",
-    institution: "University Name",
-    location: "City, Country",
-    duration: "2018 - 2022",
-    description: "Graduated with honors. Focused on software development and data structures.",
-    achievements: ["Honor Roll", "Outstanding Student Award"],
+    degree: "HSC in Science",
+    institution: "Afaz Uddin School and College",
+    location: "Dhaka, Bangladesh",
+    duration: "2018 - 2020",
+    achievements: ["Graduated with 4.83 GPA"],
+  },
+  {
+    id: 3,
+    degree: "SSC in Science",
+    institution: "Kushura Abbas Ali High School",
+    location: "Dhaka, Bangladesh",
+    duration: "2013 - 2018",
+    achievements: ["Graduated with 4.83 GPA", "Science Olympiad Participant"],
   },
 ];
 
 const certifications = [
   {
     id: 1,
-    name: "Frontend Web Development",
-    issuer: "Certificate Provider",
-    date: "2023",
-    skills: ["HTML", "CSS", "JavaScript", "React"],
+    name: "Web Development",
+    issuer: "Coursera",
+    date: "April 2, 2025",
+    skills: ["WordPress", "HTML", "CSS", "JavaScript"],
   },
   {
     id: 2,
-    name: "Data Science and Machine Learning",
-    issuer: "Certificate Provider",
-    date: "2022",
-    skills: ["Python", "TensorFlow", "Data Analysis"],
+    name: "Python Certificate",
+    issuer: "HACKERRANK",
+    date: "27 JULY, 2024",
+    skills: ["Python", "Data Structures", "Algorithms"],
   },
-  {
-    id: 3,
-    name: "UI/UX Design Fundamentals",
-    issuer: "Certificate Provider",
-    date: "2021",
-    skills: ["Figma", "User Research", "Design Systems"],
-  },
+  // {
+  //   id: 3,
+  //   name: "UI/UX Design Fundamentals",
+  //   issuer: "Certificate Provider",
+  //   date: "2021",
+  //   skills: ["Figma", "User Research", "Design Systems"],
+  // },
 ];
 
 const publications = [
-  {
-    id: 1,
-    title: "Title of Research Paper",
-    journal: "Journal Name",
-    date: "2023",
-    description: "This paper explores the implications of machine learning algorithms in healthcare.",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Another Research Publication",
-    journal: "Conference Proceedings",
-    date: "2022",
-    description: "A study on optimizing neural networks for edge computing applications.",
-    link: "#",
-  },
+  // {
+  //   id: 1,
+  //   title: "Title of Research Paper",
+  //   journal: "Journal Name",
+  //   date: "2023",
+  //   description:
+  //     "This paper explores the implications of machine learning algorithms in healthcare.",
+  //   link: "#",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Another Research Publication",
+  //   journal: "Conference Proceedings",
+  //   date: "2022",
+  //   description:
+  //     "A study on optimizing neural networks for edge computing applications.",
+  //   link: "#",
+  // },
 ];
 
 const Academic = () => {
@@ -78,7 +92,7 @@ const Academic = () => {
           My educational journey, certifications, and research publications that
           have shaped my knowledge and expertise.
         </p>
-        
+
         <section className="mb-12">
           <h2 className="section-title flex items-center">
             <GraduationCap className="mr-2" />
@@ -91,7 +105,9 @@ const Academic = () => {
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle>{edu.degree}</CardTitle>
-                      <CardDescription>{edu.institution} - {edu.location}</CardDescription>
+                      <CardDescription>
+                        {edu.institution} - {edu.location}
+                      </CardDescription>
                     </div>
                     <Badge variant="outline" className="flex items-center">
                       <Calendar className="h-3 w-3 mr-1" />
@@ -114,7 +130,7 @@ const Academic = () => {
             ))}
           </div>
         </section>
-        
+
         <section className="mb-12">
           <h2 className="section-title flex items-center">
             <Award className="mr-2" />
@@ -125,7 +141,9 @@ const Academic = () => {
               <Card key={cert.id} className="border">
                 <CardHeader>
                   <CardTitle>{cert.name}</CardTitle>
-                  <CardDescription>{cert.issuer} - {cert.date}</CardDescription>
+                  <CardDescription>
+                    {cert.issuer} - {cert.date}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
@@ -140,7 +158,7 @@ const Academic = () => {
             ))}
           </div>
         </section>
-        
+
         <section>
           <h2 className="section-title flex items-center">
             <BookOpen className="mr-2" />
@@ -151,12 +169,14 @@ const Academic = () => {
               <Card key={pub.id} className="border">
                 <CardHeader>
                   <CardTitle>{pub.title}</CardTitle>
-                  <CardDescription>{pub.journal} - {pub.date}</CardDescription>
+                  <CardDescription>
+                    {pub.journal} - {pub.date}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p>{pub.description}</p>
-                  <a 
-                    href={pub.link} 
+                  <a
+                    href={pub.link}
                     className="text-primary hover:underline mt-4 inline-block"
                     target="_blank"
                     rel="noopener noreferrer"
