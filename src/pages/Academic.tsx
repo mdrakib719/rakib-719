@@ -1,5 +1,11 @@
 import { PageLayout } from "@/components/PageLayout";
-import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
+import {
+  GraduationCap,
+  Award,
+  BookOpen,
+  Calendar,
+  ArrowUpRight,
+} from "lucide-react";
 import {
   Card,
   CardContent,
@@ -17,7 +23,7 @@ const education = [
     institution: "BRAC University",
     location: "Dhaka, Bangladesh",
     duration: "February 2021 - Present",
-    description: "Specialized in MERN and Blockchain with a GPA of 3.2/4.0.",
+    description: "Specialized in MERN and Blockchain with a CGPA of 3.2/4.0.",
     achievements: ["Dean's List", "Completed Blockchain Lab Projects"],
   },
   {
@@ -26,7 +32,7 @@ const education = [
     institution: "Afaz Uddin School and College",
     location: "Dhaka, Bangladesh",
     duration: "2018 - 2020",
-    achievements: ["Graduated with 4.83 GPA"],
+    achievements: ["Graduated with 4.83/5.0 GPA"],
   },
   {
     id: 3,
@@ -34,7 +40,10 @@ const education = [
     institution: "Kushura Abbas Ali High School",
     location: "Dhaka, Bangladesh",
     duration: "2013 - 2018",
-    achievements: ["Graduated with 4.83 GPA", "Science Olympiad Participant"],
+    achievements: [
+      "Graduated with 4.83/5.0 GPA",
+      "Science Olympiad Participant",
+    ],
   },
 ];
 
@@ -44,6 +53,8 @@ const certifications = [
     name: "Web Development",
     issuer: "Coursera",
     date: "April 2, 2025",
+    Certificate:
+      "https://www.coursera.org/account/accomplishments/verify/38J2CJWV78BS",
     skills: ["WordPress", "HTML", "CSS", "JavaScript"],
   },
   {
@@ -51,37 +62,12 @@ const certifications = [
     name: "Python Certificate",
     issuer: "HACKERRANK",
     date: "27 JULY, 2024",
+    Certificate: "https://www.hackerrank.com/certificates/84193ee97be8",
     skills: ["Python", "Data Structures", "Algorithms"],
   },
-  // {
-  //   id: 3,
-  //   name: "UI/UX Design Fundamentals",
-  //   issuer: "Certificate Provider",
-  //   date: "2021",
-  //   skills: ["Figma", "User Research", "Design Systems"],
-  // },
 ];
 
-const publications = [
-  // {
-  //   id: 1,
-  //   title: "Title of Research Paper",
-  //   journal: "Journal Name",
-  //   date: "2023",
-  //   description:
-  //     "This paper explores the implications of machine learning algorithms in healthcare.",
-  //   link: "#",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Another Research Publication",
-  //   journal: "Conference Proceedings",
-  //   date: "2022",
-  //   description:
-  //     "A study on optimizing neural networks for edge computing applications.",
-  //   link: "#",
-  // },
-];
+const publications = [];
 
 const Academic = () => {
   return (
@@ -93,6 +79,7 @@ const Academic = () => {
           have shaped my knowledge and expertise.
         </p>
 
+        {/* Education Section */}
         <section className="mb-12">
           <h2 className="section-title flex items-center">
             <GraduationCap className="mr-2" />
@@ -131,6 +118,7 @@ const Academic = () => {
           </div>
         </section>
 
+        {/* Certifications Section */}
         <section className="mb-12">
           <h2 className="section-title flex items-center">
             <Award className="mr-2" />
@@ -140,10 +128,25 @@ const Academic = () => {
             {certifications.map((cert) => (
               <Card key={cert.id} className="border">
                 <CardHeader>
-                  <CardTitle>{cert.name}</CardTitle>
-                  <CardDescription>
-                    {cert.issuer} - {cert.date}
-                  </CardDescription>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle>{cert.name}</CardTitle>
+                      <CardDescription>
+                        {cert.issuer} - {cert.date}
+                      </CardDescription>
+                    </div>
+                    {cert.Certificate && (
+                      <a
+                        href={cert.Certificate}
+                        className="text-sm text-primary hover:underline flex items-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Certificate{" "}
+                        <ArrowUpRight className="h-3 w-3 ml-1" />
+                      </a>
+                    )}
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
@@ -159,33 +162,38 @@ const Academic = () => {
           </div>
         </section>
 
+        {/* Publications Section */}
         <section>
           <h2 className="section-title flex items-center">
             <BookOpen className="mr-2" />
             Publications
           </h2>
           <div className="space-y-6">
-            {publications.map((pub) => (
-              <Card key={pub.id} className="border">
-                <CardHeader>
-                  <CardTitle>{pub.title}</CardTitle>
-                  <CardDescription>
-                    {pub.journal} - {pub.date}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>{pub.description}</p>
-                  <a
-                    href={pub.link}
-                    className="text-primary hover:underline mt-4 inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Publication
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
+            {publications.length === 0 ? (
+              <p className="text-muted-foreground">No publications yet.</p>
+            ) : (
+              publications.map((pub) => (
+                <Card key={pub.id} className="border">
+                  <CardHeader>
+                    <CardTitle>{pub.title}</CardTitle>
+                    <CardDescription>
+                      {pub.journal} - {pub.date}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p>{pub.description}</p>
+                    <a
+                      href={pub.link}
+                      className="text-primary hover:underline mt-4 inline-block"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Publication
+                    </a>
+                  </CardContent>
+                </Card>
+              ))
+            )}
           </div>
         </section>
       </div>
