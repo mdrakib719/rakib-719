@@ -68,7 +68,34 @@ const certifications = [
     skills: ["Python", "Data Structures", "Algorithms"],
   },
 ];
-
+const Awards = [
+  {
+    id: 1,
+    name: " The Duke of Edinburgh's Award",
+    issuer: "Duke of Edinburgh",
+    date: "January 2023",
+    Certificate: "https://www.dofe.org/",
+    skills: ["Leadership", "Teamwork", "Community Service"],
+  },
+  {
+    id: 2,
+    name: "IGNITION",
+    issuer: "Khulna University of Engineering & Technology",
+    date: "October 2023",
+    Certificate:
+      "https://drive.google.com/file/d/1oXSCZHYI70y4rEmGf1-KHtqK0qDVMcME/view?usp=sharing",
+    skills: ["Robotics", "project showcase"],
+  },
+  {
+    id: 3,
+    name: "TECH SPECTRA 2.O",
+    issuer: "BRAC University Robotics Club",
+    date: "February 2024 ",
+    Certificate:
+      "https://www.facebook.com/MONON.BRACU/posts/techspectra-20-ignite-the-campus-cosmos-organized-by-the-robotics-club-of-brac-u/800169132149121/",
+    skills: ["Robotics", "Soccerbot"],
+  },
+];
 const publications = [];
 
 const Academic = () => {
@@ -80,7 +107,6 @@ const Academic = () => {
           My educational journey, certifications, and research publications that
           have shaped my knowledge and expertise.
         </p>
-
         {/* Education Section */}
         <section className="mb-12">
           <h2 className="section-title flex items-center">
@@ -119,7 +145,6 @@ const Academic = () => {
             ))}
           </div>
         </section>
-
         {/* Certifications Section */}
         <section className="mb-12">
           <h2 className="section-title flex items-center">
@@ -164,6 +189,48 @@ const Academic = () => {
           </div>
         </section>
 
+        <section className="mb-12">
+          <h2 className="section-title flex items-center">
+            <Award className="mr-2" />
+            Awards
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Awards.map((award) => (
+              <Card key={award.id} className="border">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle>{award.name}</CardTitle>
+                      <CardDescription>
+                        {award.issuer} - {award.date}
+                      </CardDescription>
+                    </div>
+                    {award.Certificate && (
+                      <a
+                        href={award.Certificate}
+                        className="text-sm text-primary hover:underline flex items-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Certificate{" "}
+                        <ArrowUpRight className="h-3 w-3 ml-1" />
+                      </a>
+                    )}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {award.skills.map((skill) => (
+                      <Badge key={skill} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
         {/* Publications Section */}
         <section>
           <h2 className="section-title flex items-center">

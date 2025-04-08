@@ -48,17 +48,18 @@ const workExperience = [
   },
   {
     id: 3,
-    title: "Web Development Intern",
-    company: "Startup Name",
-    location: "City, Country",
-    duration: "2020 - 2021",
+    title: "Member of Tream Atlas",
+    company: "BRAC University",
+    location: "Dhaka, Bangladesh",
+    duration: "2022 - 2023",
     description:
-      "Assisted in the development and maintenance of company websites and applications.",
+      "Member of Tream Atlas, a student organization focused on technology and innovation.",
     responsibilities: [
-      "Developed interactive UI components using HTML, CSS, and JavaScript",
-      "Fixed bugs and improved existing features",
-      "Created technical documentation for internal use",
-      "Collaborated with the design team to implement new website features",
+      "Participated in workshops and seminars on emerging technologies",
+      "Collaborated with peers on projects related to technology and innovation",
+      "Contributed to the organization of events and activities",
+      "Engaged in community outreach programs to promote technology education",
+      "Networked with industry professionals and alumni for career development",
     ],
   },
 ];
