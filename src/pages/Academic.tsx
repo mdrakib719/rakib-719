@@ -67,6 +67,15 @@ const certifications = [
     Certificate: "https://www.hackerrank.com/certificates/84193ee97be8",
     skills: ["Python", "Data Structures", "Algorithms"],
   },
+  {
+    id: 3,
+    name: "Office Application",
+    issuer: "NEXT IT & COMPUTER TRAINING CENTER",
+    date: "JUNE 2018",
+    Certificate:
+      "https://drive.google.com/drive/folders/1tafH_sYUoRdYv2eZrMpxKtbtoUVxwzU9?usp=sharing",
+    skills: ["MS Word", "MS Excel", "MS PowerPoint"],
+  },
 ];
 const Awards = [
   {
