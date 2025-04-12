@@ -18,9 +18,10 @@ const projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio website built with React and Tailwind CSS.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
+    tags: ["React", "TypeScript", "Tailwind CSS", "supabase"],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    github: "#",
+    github:
+      "https://github.com/mdrakib719/shining-self-portfolio-showcase/tree/main",
     demo: "#",
   },
   {
