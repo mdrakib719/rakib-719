@@ -1,6 +1,12 @@
-
 import { PageLayout } from "@/components/PageLayout";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,7 +16,8 @@ const projects = [
   {
     id: 1,
     title: "Portfolio Website",
-    description: "A personal portfolio website built with React and Tailwind CSS.",
+    description:
+      "A personal portfolio website built with React and Tailwind CSS.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     github: "#",
@@ -18,30 +25,61 @@ const projects = [
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "A full-stack application for managing tasks and projects.",
-    tags: ["React", "Node.js", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
-    github: "#",
-    demo: "#",
+    title: "Secondary Car Marketplace and Service Platform",
+    description:
+      "A full-stack MERN application This project offers a unified platform to buy, sell, rent, and maintain used cars. The primary objective is to create a transparent, efficient, and user-friendly service ecosystem that caters to all car-related needs.",
+    tags: ["React", "Node.js", "Express.js", "MongoDB"],
+    image:
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//Screenshot%202025-04-12%20at%2012.10.40%20PM.png",
+    github: "https://github.com/ovijitM/cse470_SCM",
+    demo: "https://car719.netlify.app/",
   },
   {
     id: 3,
-    title: "Weather Forecast App",
-    description: "A weather forecast application using a third-party API.",
-    tags: ["JavaScript", "API Integration", "CSS"],
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b",
-    github: "#",
+    title: "Echo Bank Database Management System",
+    description:
+      "A comprehensive database management system for Echo Bank, managing customer accounts, transactions, loans, donations, and complaints",
+
+    tags: ["macOS", "XAMPP", "PHP", "MySQL"],
+    image:
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//Screenshot%202025-04-12%20at%2012.33.30%20PM.png",
+    github: "https://github.com/ovijitM/Banking-system-with_php_sql",
     demo: "#",
   },
   {
     id: 4,
+    title: "ML-Based Heart Disease Classifier",
+    description:
+      "This project aims to detect heart disease using machine learning techniques. It involves data preprocessing, exploratory analysis, model training, and evaluation to predict the presence of heart disease based on patient health metrics.",
+    tags: [
+      "Python",
+      "Machine Learning",
+      "Pandas",
+      "Scikit-learn",
+      "Matplotlib",
+      "seaborn",
+      "logistic regression",
+      "decision tree",
+      "random forest",
+      "KNN",
+      "SVM",
+      "Supervised Learning",
+    ],
+    image:
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//Screenshot%202025-04-12%20at%2012.31.53%20PM.png",
+    github: "https://github.com/mdrakib719/Heart-Disease-Detection-",
+    demo: "https://colab.research.google.com/drive/1F0OTYeaS9VhOhJxq8R60H-wTKd_zkERT?usp=sharing",
+  },
+  {
+    id: 5,
     title: "E-commerce Platform",
-    description: "An online shopping platform with product listings and cart functionality.",
+    description:
+      "An online shopping platform with product listings and cart functionality.",
     tags: ["React", "Redux", "Firebase"],
-    image: "https://images.unsplash.com/photo-1556742208-999815fca738",
-    github: "#",
-    demo: "#",
+    image:
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//Screenshot%202025-04-12%20at%2012.10.40%20PM.png",
+    github: "https://github.com/ovijitM/cse470_SCM",
+    demo: "https://car719.netlify.app/buycars",
   },
 ];
 
@@ -51,17 +89,20 @@ const Projects = () => {
       <div className="page-container">
         <h1 className="page-title">My Projects</h1>
         <p className="text-lg text-muted-foreground mb-8">
-          Here are some of the projects I've worked on. Each project reflects my skills,
-          interests, and the problems I enjoy solving.
+          Here are some of the projects I've worked on. Each project reflects my
+          skills, interests, and the problems I enjoy solving.
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
+            <Card
+              key={project.id}
+              className="overflow-hidden flex flex-col hover:shadow-lg transition-shadow"
+            >
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                 />
               </div>
@@ -79,15 +120,15 @@ const Projects = () => {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Link 
-                  to={project.github} 
+                <Link
+                  to={project.github}
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                 >
                   <Github className="h-4 w-4" />
                   <span>Code</span>
                 </Link>
-                <Link 
-                  to={project.demo} 
+                <Link
+                  to={project.demo}
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                 >
                   <ExternalLink className="h-4 w-4" />
