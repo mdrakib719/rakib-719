@@ -73,7 +73,7 @@ const certifications = [
     issuer: "NEXT IT & COMPUTER TRAINING CENTER",
     date: "JUNE 2018",
     Certificate:
-      "https://drive.google.com/drive/folders/1tafH_sYUoRdYv2eZrMpxKtbtoUVxwzU9?usp=sharing",
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//computer%20_2.jpg",
     skills: ["MS Word", "MS Excel", "MS PowerPoint"],
   },
 ];
@@ -92,7 +92,7 @@ const Awards = [
     issuer: "Khulna University of Engineering & Technology",
     date: "October 2023",
     Certificate:
-      "https://drive.google.com/file/d/1oXSCZHYI70y4rEmGf1-KHtqK0qDVMcME/view?usp=sharing",
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//Ignation.png",
     skills: ["Robotics", "project showcase"],
   },
   {

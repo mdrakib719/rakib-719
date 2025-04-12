@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Portfolio. All rights reserved.
+              © {currentYear} Rakib Portfolio. All rights reserved.
             </p>
           </div>
 
