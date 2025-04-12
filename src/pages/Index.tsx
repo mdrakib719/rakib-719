@@ -47,7 +47,7 @@ const Home = () => {
 
             {/* Profile Image */}
             <img
-              src="src/pages/img/rakib.png"
+              src="https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//Green%20Gradient%20Minimalist%20Simple%20Instagram%20Profile%20Picture.png"
               alt="Md Rakib Hossain"
               className="w-60 h-80 md:w-80 md:h-60 rounded-full object-cover shadow-lg"
             />
