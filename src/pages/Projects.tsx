@@ -72,14 +72,13 @@ const projects = [
   },
   {
     id: 5,
-    title: "E-commerce Platform",
-    description:
-      "An online shopping platform with product listings and cart functionality.",
-    tags: ["React", "Redux", "Firebase"],
+    title: "Desings",
+    description: "Image Gallery",
+    tags: ["HTML", "CSS", "JavaScript"],
     image:
-      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//Screenshot%202025-04-12%20at%2012.10.40%20PM.png",
-    github: "https://github.com/ovijitM/cse470_SCM",
-    demo: "https://car719.netlify.app/buycars",
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//img_7.jpg",
+    github: "https://github.com/mdrakib719/project_for_fun/",
+    demo: "https://rakibfun.netlify.app/",
   },
 ];
 
