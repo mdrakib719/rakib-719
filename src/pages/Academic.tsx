@@ -23,9 +23,11 @@ const education = [
     institution: "BRAC University",
     location: "Dhaka, Bangladesh",
     duration: "February 2021 - Present",
-    description: "Specialized in MERN and Blockchain with a CGPA of 3.2/4.0.",
+    description: "Specialized in MERN and Blockchain.",
     achievements: [
-      "Completed multiple projects in web development and blockchain",
+      "Completed multiple projects in Web Software, Blockchain, Ai technologies, Robotics.",
+      "Participated in various hackathons and coding competitions.",
+      "Member of the university's robotics club and participated in various events.",
     ],
   },
   {
@@ -34,7 +36,7 @@ const education = [
     institution: "Afaz Uddin School and College",
     location: "Dhaka, Bangladesh",
     duration: "2018 - 2020",
-    achievements: ["Graduated with 4.83/5.0 GPA"],
+    achievements: ["Graduated"],
   },
   {
     id: 3,
@@ -42,10 +44,7 @@ const education = [
     institution: "Kushura Abbas Ali High School",
     location: "Dhaka, Bangladesh",
     duration: "2013 - 2018",
-    achievements: [
-      "Graduated with 4.83/5.0 GPA",
-      "Science Olympiad Participant",
-    ],
+    achievements: ["Graduated", "Science Olympiad Participant"],
   },
 ];
 
@@ -76,6 +75,34 @@ const certifications = [
       "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//computer%20_2.jpg",
     skills: ["MS Word", "MS Excel", "MS PowerPoint"],
   },
+  {
+    //GitHub Copilot
+    // GitHub Copilot
+    // SimplilearnSimplilearn
+    // Issued Apr 2025Issued Apr 2025
+    // Credential ID 8191167Credential ID 8191167
+    id: 4,
+    name: "GitHub Copilot",
+    issuer: "Simplilearn",
+    date: "April 2025",
+    Certificate:
+      "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0ODc2IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODE5MTE2N184NTUyOTYyMTc0NDY2NDU5OTM0OC5wbmciLCJ1c2VybmFtZSI6Ik1kIFJha2liIEhvc3NhaW4ifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7867%2FGitHub-Copilot-Fundamentals%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1388493965809893243&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVz%2FdxyU9ODs%2BtCk6yrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAIB5BaxBAAAA",
+    skills: ["GitHub", "GitHub Copilot", "AI Tools"],
+  },
+  //   MERN Stack
+  // MERN Stack
+  // SimplilearnSimplilearn
+  // Issued Apr 2025Issued Apr 2025
+  // Credential ID 8191074Credential ID 8191074MERN Stack
+  {
+    id: 4,
+    name: "MERN Stack",
+    issuer: "Simplilearn",
+    date: "April 2025",
+    Certificate:
+      "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMzM3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODE5MTA3NF84NTUyOTYyMTc0NDY2MTgyNzM5OS5wbmciLCJ1c2VybmFtZSI6Ik1kIFJha2liIEhvc3NhaW4ifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F6129%2FIntroduction-to-MERN-Stack%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1388493965809893243&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVtwzKy3LNN8ipCk6yrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAOUhJS1BAAAA",
+    skills: ["MERN", "MongoDB", "Express", "React", "Node.js"],
+  },
 ];
 const Awards = [
   {
@@ -83,7 +110,8 @@ const Awards = [
     name: " The Duke of Edinburgh's Award",
     issuer: "Duke of Edinburgh",
     date: "January 2023",
-    Certificate: "https://www.dofe.org/",
+    Certificate:
+      "https://czrzkrlkqywcczazeopo.supabase.co/storage/v1/object/public/blog-images//1745071454686.jpg",
     skills: ["Leadership", "Teamwork", "Community Service"],
   },
   {
