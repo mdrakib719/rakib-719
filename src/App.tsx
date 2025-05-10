@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/Login";
 import DashboardPage from "./pages/DashboardPage";
+import ForecastPage from "./pages/ForecastPage";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/forecast" element={<ForecastPage />} />
             {/* Add more routes as needed */}
             {/* Catch-all route for 404 Not Found */}
             <Route path="*" element={<NotFound />} />
