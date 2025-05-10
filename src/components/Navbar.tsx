@@ -11,6 +11,7 @@ const navItems = [
   { name: "Academic", path: "/academic" },
   { name: "Experience", path: "/experience" },
   { name: "Contact", path: "/contact" },
+  { name: "Login", path: "/login" },
 ];
 
 export function Navbar() {
