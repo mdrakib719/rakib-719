@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl = "https://czrzkrlkqywcczazeopo.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6cnprcmxrcXl3Y2N6YXplb3BvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0Mjk2MTksImV4cCI6MjA2MDAwNTYxOX0.WojC6BIUIjCuQQj-5zpzI8s_pUZNn5HvKPG4OlD4jXM";
-
-export const supabase = createClient(supabaseUrl, supabaseKey);
-
 import {
   Card,
   CardContent,
@@ -18,7 +11,11 @@ import {
 import { PageLayout } from "@/components/PageLayout";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User } from "lucide-react";
-import { Link } from "react-router-dom";
+
+const supabaseUrl = "https://czrzkrlkqywcczazeopo.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6cnprcmxrcXl3Y2N6YXplb3BvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0Mjk2MTksImV4cCI6MjA2MDAwNTYxOX0.WojC6BIUIjCuQQj-5zpzI8s_pUZNn5HvKPG4OlD4jXM";
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 type BlogPost = {
   id: number;
@@ -29,6 +26,7 @@ type BlogPost = {
   author: string;
   categories: string | string[];
   slug: string;
+  paper_url?: string;
 };
 
 const Blog = () => {
@@ -38,19 +36,28 @@ const Blog = () => {
     const fetchPosts = async () => {
       const { data, error } = await supabase
         .from("blog_posts")
-        .select("id, title, excerpt, date, read_time, author, categories, slug")
+        .select(
+          "id, title, excerpt, date, read_time, author, categories, slug, paper_url"
+        )
         .order("date", { ascending: false });
 
       if (error) {
         console.error("Error fetching posts:", error.message);
       } else {
-        console.log("Fetched posts:", data); // 👈 Debug output
         setBlogPosts(data || []);
       }
     };
 
     fetchPosts();
   }, []);
+
+  const handlePostClick = (post: BlogPost) => {
+    if (post.paper_url) {
+      window.open(post.paper_url, "_blank");
+    } else {
+      window.location.href = `/blog/${post.slug}`;
+    }
+  };
 
   return (
     <PageLayout>
@@ -76,12 +83,11 @@ const Blog = () => {
                 : [];
 
               return (
-                <Link
-                  key={post.id}
-                  to={`/blog/${post.slug}`}
-                  className="no-underline"
-                >
-                  <Card className="h-full hover:shadow-md transition-shadow border">
+                <div key={post.id} className="cursor-pointer group">
+                  <Card
+                    className="h-full hover:shadow-md transition-shadow border"
+                    onClick={() => handlePostClick(post)}
+                  >
                     <CardHeader>
                       <CardTitle>{post.title}</CardTitle>
                       <CardDescription>
@@ -94,12 +100,14 @@ const Blog = () => {
                         </div>
                       </CardDescription>
                     </CardHeader>
+
                     <CardContent>
                       <p className="line-clamp-3 text-muted-foreground">
                         {post.excerpt}
                       </p>
                     </CardContent>
-                    <CardFooter className="flex justify-between text-sm text-muted-foreground">
+
+                    <CardFooter className="flex justify-between items-center text-sm text-muted-foreground">
                       <div className="flex items-center">
                         <User className="h-4 w-4 mr-1" />
                         <span>{post.author}</span>
@@ -112,9 +120,22 @@ const Blog = () => {
                         <Clock className="h-4 w-4 mr-1" />
                         <span>{post.read_time}</span>
                       </div>
+                      {post.paper_url && (
+                        <div className="flex items-center">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation(); // prevent triggering card click
+                              window.open(post.paper_url, "_blank");
+                            }}
+                            className="text-sm text-blue-600 hover:underline hover:text-blue-800 transition"
+                          >
+                            Read the full blog &rarr;
+                          </button>
+                        </div>
+                      )}
                     </CardFooter>
                   </Card>
-                </Link>
+                </div>
               );
             })}
           </div>

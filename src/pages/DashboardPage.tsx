@@ -10,6 +10,7 @@ interface BlogPost {
   author: string;
   categories: string;
   slug: string;
+  paper_url?: string;
 }
 
 const DashboardPage: React.FC = () => {
@@ -119,6 +120,12 @@ const DashboardPage: React.FC = () => {
           placeholder="Slug"
           style={{ width: "100%", marginBottom: "0.5rem" }}
         />
+        <input
+          value={newPost.paper_url || ""}
+          onChange={(e) => handleNewChange("paper_url", e.target.value)}
+          placeholder="URL for blog"
+          style={{ width: "100%", marginBottom: "0.5rem" }}
+        />
         <button onClick={handleAddNew}>🚀 Add Blog</button>
       </div>
 
@@ -175,6 +182,12 @@ const DashboardPage: React.FC = () => {
               placeholder="Slug"
               style={{ width: "100%", marginBottom: "0.5rem" }}
             />
+            <input
+              value={form.paper_url || ""}
+              onChange={(e) => handleFormChange("paper_url", e.target.value)}
+              placeholder="URL for blog"
+              style={{ width: "100%", marginBottom: "0.5rem" }}
+            />
             <button onClick={handleUpdate}>✅ Save</button>
             <button
               onClick={() => setEditingId(null)}
@@ -208,6 +221,21 @@ const DashboardPage: React.FC = () => {
             </p>
             <p>
               <strong>Slug:</strong> {post.slug}
+            </p>
+            <p>
+              <strong>URL:</strong>{" "}
+              {post.paper_url ? (
+                <a
+                  href={post.paper_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#2563eb", textDecoration: "underline" }}
+                >
+                  Open
+                </a>
+              ) : (
+                "—"
+              )}
             </p>
             <button
               onClick={() => {
